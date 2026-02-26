@@ -1,0 +1,6 @@
+#ifndef BUTTON_CONFIG_H_
+#define BUTTON_CONFIG_H_
+
+enum Buttons{LEFT_BTN, RIGHT_BTN, DOWN_BTN, UP_BTN, SNOOZE_BTN, NUM_BTNS, NO_BTN};
+
+#endif
