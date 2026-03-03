@@ -168,8 +168,9 @@ static void drawTmr(State *state)
 	}
 	else
 	{
+		t = time_round(t);
 		n1 = t.h;
-		n2 = t.m + (bool)t.s;
+		n2 = t.m;
 	}
 
 	if(state->mode == EDIT && blinkFlag)
