@@ -30,8 +30,8 @@ static void alxInfo(Screen const *self)
 	}
 	else
 	{
-		uint8_t h = (uint8_t)fields[HOUR_FLD].get();
-		uint8_t m = (uint8_t)fields[MIN_FLD].get();
+		uint8_t h = (uint8_t)fields[self->field].get();
+		uint8_t m = (uint8_t)fields[self->field + 1].get();
 		if(!h && !m) displayString("Mid.");
 		else if(h == 12 && !m) displayString("noon");
 		else if(h >= 12) displayString("PM");
