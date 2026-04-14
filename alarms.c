@@ -146,6 +146,16 @@ void snooze(uint8_t alm, uint16_t dur)
 	d->enabled = true;
 }
 
+void cancelAlarms(State *state)
+{
+	snd_stop();
+	state->alarmSounding = false;
+	for(uint8_t i = 0; i < NUM_ALMS; i++)
+	{
+		alarms_data[i].raised = false;
+	}
+}
+
 Alarm const alarms[NUM_ALMS] =
 {
 	[ALM1] = {"AL1", ALM1, SNZ1, 1, 1, 0, nullptr},

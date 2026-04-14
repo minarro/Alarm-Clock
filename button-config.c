@@ -34,16 +34,6 @@ static bool snoozePressed(void)
 	return !PORTBbits.RB6;
 }
 
-static void cancelAlarms(State *state)
-{
-	snd_stop();
-	state->alarmSounding = false;
-	for(uint8_t i = 0; i < NUM_ALMS; i++)
-	{
-		alarms_data[i].raised = false;
-	}
-}
-
 static void startSoundTest(State *state)
 {
 	sounds[fields[SND_FLD].get()].play();

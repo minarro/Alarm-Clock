@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "shared-defs.h"
 #include "sounds.h"
 #include "time.h"
 
@@ -36,6 +37,7 @@ uint8_t findNextAlarm(bool audibleOnly); // To hardware
 uint8_t writeNextAlarm(void);
 bool raiseAlarms(void);
 void snooze(uint8_t alm, uint16_t dur);
+void cancelAlarms(State *state);
 
 #define getNextAlarm() findNextAlarm(false)
 #define getNextAudibleAlarm() findNextAlarm(true)

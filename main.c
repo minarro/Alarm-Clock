@@ -257,7 +257,7 @@ void main(void)
 
 		if(beepFlag)
 		{
-			state.alarmSounding = sounds[fields[SND_FLD].get()].play();
+			if(!sounds[fields[SND_FLD].get()].play()) cancelAlarms(&state);
 			beepFlag = false;
 		}
 
